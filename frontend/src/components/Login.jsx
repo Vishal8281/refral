@@ -1,7 +1,41 @@
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import "./comman.css";
+import { useState } from "react";
+import axios from "axios"
 
 const Login = () => {
+
+ const navigate = useNavigate();
+
+  const [data,setData]=useState({
+   
+    email:"",
+    password:"",
+  
+
+
+  })
+
+  const handleChange=(e)=>{
+    setData((data)=>({...data,[e.target.name]:e.target.value}))
+
+  }
+
+  const handlSubmit=()=>{
+
+   axios.post('http//localhost:8000/login',data)
+   .then((res)=>{
+    console.log(res)
+    navigate('/home')
+   })
+   .catch((err)=>{
+    console.log(err)
+    setData({
+      email:"",
+      password:"",
+    })
+   })
+  }
   return (
     <>
       <div
@@ -26,7 +60,10 @@ const Login = () => {
               <input
                 type="text"
                 id="login"
-                placeholder="Username"
+                onChange={handleChange}
+                value={data.email}
+                name='email'
+                placeholder="email"
                 className="form-control"
                 style={{
                   border:"none",
@@ -45,7 +82,9 @@ const Login = () => {
               
                 className="password"
                 placeholder="Password"
-                id="form2Example22"
+                onChange={handleChange}
+                value={data.password}
+                name='password'
                 style={{
                   border:"none",
                   boxShadow:"5px 10px 10px 0px rgba(0,0,0,0.4)",
@@ -60,6 +99,7 @@ const Login = () => {
               <button
                 className="login"
                 type="button"
+                onClick={handlSubmit}
                 style={{
                   border:"none",
                   boxShadow:"5px 10px 10px 0px rgba(0,0,0,0.4)",
@@ -112,7 +152,7 @@ const Login = () => {
         >
           <div style={{ marginTop: "160px" }}>
             <h1 style={{ fontSize: "50px", color: "white", margin: "10px" }}>
-              Dphon{" "}
+              Dphone{" "}
             </h1>
             <h1 style={{ fontSize: "50px", color: "white", margin: "10px" }}>
               Corporation
@@ -120,7 +160,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Link to="/">home</Link>
+      <Link to="/home">home</Link>
     </>
   );
 };

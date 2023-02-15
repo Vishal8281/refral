@@ -18,12 +18,12 @@ const Navbar = () => {
           fontSize: "25px",
           textDecoration: "none",
         }}
-        to="/"
+        to="/home"
       >
         Home
       </Link>
       <Link
-        to="/login"
+        to="/"
         style={{
           color: "white",
           margin: "10px",
@@ -33,7 +33,7 @@ const Navbar = () => {
       >
         Login
       </Link>
-      <div class="dropdown">
+      <div className="dropdown">
         <h1>Profile</h1>
         <div class="dropdown-options">
           <a >Username</a>

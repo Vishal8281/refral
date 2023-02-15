@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar"
 import iImage from "../assets/image.jpg"
 
-const Home =()=>{
+const Home =({state})=>{
 
     return(
  <>
@@ -20,7 +20,7 @@ const Home =()=>{
    <h1 style={{color:"black"}}>Dphone</h1>
       <h2>Price:$1000</h2>
       
-      <p></p>
+    <Link to="/refral">{state?"you have a refral":""}</Link>
       
    </div>
    <button style={{padding:"10px", marginLeft:"350px" ,width:"100px",borderRadius:"5px" ,backgroundColor:"#0047AB",color:"white"}}> <Link style={{color:"white",textDecoration:"none"}} to="/buy" >Buy</Link></button>

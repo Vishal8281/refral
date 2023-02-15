@@ -1,7 +1,32 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./comman.css";
+import axios from "axios"
 
 const Login = () => {
+  const [data, setData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confpassword: "",
+  });
+
+  const handleChange = (e) => {
+    setData((data) => ({ ...data, [e.target.name]: e.target.value }));
+  };
+
+  const handlSubmit = () => {
+    axios
+      .post("http//localhost:8000/signup", data)
+      .then((res) => {
+        console.log(res);
+        setData({ username: "", email: "", password: "", confpassword: "" });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <div
@@ -25,11 +50,14 @@ const Login = () => {
               <input
                 type="text"
                 id="login"
+                value={data.username}
+                name="username"
+                onChange={handleChange}
                 placeholder="Username"
                 className="form-control"
                 style={{
-                  border:"none",
-                  boxShadow:"5px 10px 10px 0px rgba(0,0,0,0.4)",
+                  border: "none",
+                  boxShadow: "5px 10px 10px 0px rgba(0,0,0,0.4)",
                   padding: "10px",
                   width: "300px",
                   borderRadius: "20px",
@@ -42,11 +70,14 @@ const Login = () => {
               <input
                 type="text"
                 id="login"
+                onChange={handleChange}
+                value={data.email}
+                name="email"
                 placeholder="Email"
                 className="form-control"
                 style={{
-                  border:"none",
-                  boxShadow:"5px 10px 10px 0px rgba(0,0,0,0.4)",
+                  border: "none",
+                  boxShadow: "5px 10px 10px 0px rgba(0,0,0,0.4)",
                   padding: "10px",
                   width: "300px",
                   borderRadius: "20px",
@@ -59,16 +90,17 @@ const Login = () => {
               <input
                 className="password"
                 placeholder="Password"
-              
+                onChange={handleChange}
+                value={data.password}
+                name="password"
                 style={{
-                  border:"none",
-                  boxShadow:"5px 10px 10px 0px rgba(0,0,0,0.4)",
+                  border: "none",
+                  boxShadow: "5px 10px 10px 0px rgba(0,0,0,0.4)",
                   padding: "10px",
                   width: "300px",
                   borderRadius: "20px",
                 }}
               />
-              
             </div>
             <br />
 
@@ -76,25 +108,27 @@ const Login = () => {
               <input
                 className="password"
                 placeholder="Confirm Password"
-            
+                onChange={handleChange}
+                value={data.confpassword}
+                name="confpassword"
                 style={{
-                  border:"none",
-                  boxShadow:"5px 10px 10px 0px rgba(0,0,0,0.4)",
+                  border: "none",
+                  boxShadow: "5px 10px 10px 0px rgba(0,0,0,0.4)",
                   padding: "10px",
                   width: "300px",
                   borderRadius: "20px",
                 }}
               />
-              
             </div>
             <br />
             <div>
               <button
                 className="login"
                 type="button"
+                onClick={handlSubmit}
                 style={{
-                  border:"none",
-                  boxShadow:"5px 10px 10px 0px rgba(0,0,0,0.4)",
+                  border: "none",
+                  boxShadow: "5px 10px 10px 0px rgba(0,0,0,0.4)",
                   padding: "10px",
                   margin: "10px",
                   width: "300px",
@@ -112,8 +146,8 @@ const Login = () => {
                 className="login"
                 type="button"
                 style={{
-                  border:"none",
-                  boxShadow:"5px 10px 10px 0px rgba(0,0,0,0.4)",
+                  border: "none",
+                  boxShadow: "5px 10px 10px 0px rgba(0,0,0,0.4)",
                   padding: "10px",
                   margin: "10px",
                   width: "300px",
@@ -123,10 +157,7 @@ const Login = () => {
                     "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
                 }}
               >
-                <Link
-                  to="/Login"
-                  style={{ textDecoration: "none", color: "white" }}
-                >
+                <Link to="/" style={{ textDecoration: "none", color: "white" }}>
                   Login
                 </Link>
               </button>
@@ -144,7 +175,7 @@ const Login = () => {
         >
           <div style={{ marginTop: "160px" }}>
             <h1 style={{ fontSize: "50px", color: "white", margin: "10px" }}>
-              Dphon{" "}
+              Dphone{" "}
             </h1>
             <h1 style={{ fontSize: "50px", color: "white", margin: "10px" }}>
               Corporation
@@ -152,7 +183,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Link to="/">home</Link>
+      <Link to="/home">home</Link>
     </>
   );
 };

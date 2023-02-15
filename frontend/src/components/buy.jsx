@@ -5,7 +5,9 @@ const Buy =()=>{
     return(
  <>
   <Navbar/>
- <h1>Buy</h1>
+  <div>
+   
+  </div>
  </>
 
     )
