@@ -180,14 +180,15 @@ table{
 }
 
 th{
-  background-color: aqua;
+
  padding: 10px;
  border: groove;
+ font-family: 'Times New Roman', Times, serif;
 
 }
 td{
 
-background-color: aquamarine;
+
 padding: 5px;
 
 }

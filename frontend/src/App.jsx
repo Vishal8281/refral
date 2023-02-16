@@ -5,6 +5,7 @@ import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Refral from "./components/refral"
 import Buy  from './components/buy'
+import Update from './components/update'
 
 
 
@@ -21,6 +22,7 @@ function App() {
       <Route path='signup' element={<Signup/>} />
       <Route path='Refral' element={<Refral/>} />
       <Route path='Buy' element={<Buy/>} />
+      <Route path='update' element={<Update/>}/>
     </Routes>
     </BrowserRouter>
     </>

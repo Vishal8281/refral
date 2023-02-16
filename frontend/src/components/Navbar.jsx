@@ -20,11 +20,12 @@ const Navbar = () => {
         }}
         to="/home"
       >
-        Home
+        Dphone
       </Link>
       <Link
         to="/"
         style={{
+          float:'right',
           color: "white",
           margin: "10px",
           fontSize: "25px",

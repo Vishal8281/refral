@@ -1,7 +1,9 @@
 import "./comman.css";
 import axios from "axios";
 import { useState } from "react";
-const makerefral = () => {
+
+
+const Update = ({userid}) => {
   const [id,setId]=useState(null)
   const [data, setData] = useState({
     Firstname: "",
@@ -18,7 +20,7 @@ const makerefral = () => {
 
   const handlSubmit = () => {
     axios
-      .post("http://localhost:8000/makereferal", data)
+      .put(`http://localhost:8000/makereferal/${userid}`, data)
       .then((res) => {
         console.log(res);
         setData({
@@ -38,7 +40,7 @@ const makerefral = () => {
   return (
     <>
       <div className="makerefral">
-        <h1>Create Referral</h1>
+        <h1>Update Referral</h1>
 
         <form className="refral-form">
           <label className="lab">Firstname:</label>
@@ -68,7 +70,7 @@ const makerefral = () => {
             type="email"
             name="email"
             value={data.email}
-            style={{marginLeft:"40px"}}
+            style={{marginLeft:"50px"}}
           ></input>
           <br />
 
@@ -79,7 +81,6 @@ const makerefral = () => {
             type="text"
             name="MobileNo"
             value={data.MobileNo}
-            style={{marginLeft:"3px"}}
           ></input>
           <br />
           <label className="lab">Date:</label>
@@ -89,7 +90,7 @@ const makerefral = () => {
             type="date"
             name="Date"
             value={data.Date}
-            style={{marginLeft:"53px"}}
+            style={{marginLeft:"50px"}}
           ></input>
           <br />
      
@@ -105,4 +106,4 @@ const makerefral = () => {
   );
 };
 
-export default makerefral;
+export default Update;
