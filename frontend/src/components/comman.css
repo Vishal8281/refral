@@ -141,7 +141,7 @@ button:hover{
   background: linear-gradient(90deg, rgba(102,96,207,1) 0%, rgba(144,60,177,1) 49%, rgba(236,216,245,1) 100%);
   margin: 50px auto;
   width: 600px;
-  height: 600px;
+  height: 500px;
   padding: 20px;
   border-radius: 10px;
 }
@@ -173,3 +173,22 @@ button:hover{
   background-color: #fff;
   color: black;
 }
+
+table{
+  margin: 20px;
+  border: groove;
+}
+
+th{
+  background-color: aqua;
+ padding: 10px;
+ border: groove;
+
+}
+td{
+
+background-color: aquamarine;
+padding: 5px;
+
+}
+

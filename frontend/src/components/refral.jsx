@@ -28,12 +28,12 @@ import Makerefral from "./makerefral";
 
       <div style={{margin:"20px"}}>
 
-      <button onClick={handlemake} style={{width:"200px",padding:"10px",borderRadius:"20px",margin:"10px ",border:"none", marginTop:"40px",}}> <Link style={{color:"black",textDecoration:"none",fontSize:"20px"}}>Make Refral</Link></button>
+      <button onClick={handlemake} style={{width:"200px",padding:"10px",borderRadius:"20px",margin:"10px ",border:"none", marginTop:"40px",}}> <Link style={{color:"black",textDecoration:"none",fontSize:"20px"}}>Make Referral</Link></button>
 
        
        <br/>
        <br/>
-      <button onClick={handleshow} style={{width:"200px",padding:"10px", borderRadius:"20px",margin:"10px",border:"none" ,marginTop:"40px"}}><Link style={{color:"black",textDecoration:"none",fontSize:"20px"}}>Show Refral</Link></button>
+      <button onClick={handleshow} style={{width:"200px",padding:"10px", borderRadius:"20px",margin:"10px",border:"none" ,marginTop:"40px"}}><Link style={{color:"black",textDecoration:"none",fontSize:"20px"}}>Show Referral</Link></button>
       </div>
    
 

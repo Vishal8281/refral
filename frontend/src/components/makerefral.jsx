@@ -1,15 +1,13 @@
 import "./comman.css";
-import axios from "axios"
+import axios from "axios";
 import { useState } from "react";
 const makerefral = () => {
   const [data, setData] = useState({
     Firstname: "",
     Lastname: "",
-    username: "",
     email: "",
     MobileNo: "",
     Date: "",
-    Points: "",
     userid: "",
   });
 
@@ -25,11 +23,11 @@ const makerefral = () => {
         setData({
           Firstname: "",
           Lastname: "",
-          username: "",
+        
           email: "",
           MobileNo: "",
           Date: "",
-          Points: "",
+        
           userid: "",
         });
       })
@@ -61,15 +59,7 @@ const makerefral = () => {
             name="Lastname"
             value={data.Lastname}
           ></input>
-          <br />
-          <label className="lab">Username:</label>
-          <input
-            onChange={handleChange}
-            className="inp"
-            type="text"
-            name="Username"
-            value={data.Username}
-          ></input>
+          
           <br />
           <label className="lab">Email:</label>
           <input
@@ -99,14 +89,7 @@ const makerefral = () => {
             value={data.Date}
           ></input>
           <br />
-          <label className="lab">Points:</label>
-          <input
-            onChange={handleChange}
-            className="inp"
-            type="number"
-            name="Points"
-            value={data.Points}
-          ></input>
+     
           <br />
           <label className="lab">userid:</label>
           <input

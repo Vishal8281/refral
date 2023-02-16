@@ -37,7 +37,7 @@ const Navbar = () => {
         <h1>Profile</h1>
         <div class="dropdown-options">
           <a >Username</a>
-          <a href="/refral">Refral</a>
+          <a href="/refral">Referral</a>
           <a >Logout</a>
         </div>
       </div>
