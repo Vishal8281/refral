@@ -6,7 +6,7 @@ const showrefral=()=>{
 
  useEffect(()=>{
     axios
-    .get("http//localhost:8000/showrefral")
+    .get("http://localhost:8000/showrefral")
     .then((res) => {
       console.log(res);
       setData(res.data);

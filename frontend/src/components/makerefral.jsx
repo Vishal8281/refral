@@ -19,7 +19,7 @@ const makerefral = () => {
 
   const handlSubmit = () => {
     axios
-      .post("http//localhost:8000/makerefral", data)
+      .post("http://localhost:8000/makerefral", data)
       .then((res) => {
         console.log(res);
         setData({

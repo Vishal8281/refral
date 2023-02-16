@@ -17,7 +17,7 @@ const Login = () => {
 
   const handlSubmit = () => {
     axios
-      .post("http//localhost:8000/signup", data)
+      .post("http://localhost:8000/signup", data)
       .then((res) => {
         console.log(res);
         setData({ username: "", email: "", password: "", confpassword: "" });
@@ -54,6 +54,7 @@ const Login = () => {
                 name="username"
                 onChange={handleChange}
                 placeholder="Username"
+                
                 className="form-control"
                 style={{
                   border: "none",
@@ -88,6 +89,7 @@ const Login = () => {
 
             <div className="password">
               <input
+              type='password'
                 className="password"
                 placeholder="Password"
                 onChange={handleChange}
@@ -106,6 +108,7 @@ const Login = () => {
 
             <div className="password">
               <input
+              type='password'
                 className="password"
                 placeholder="Confirm Password"
                 onChange={handleChange}

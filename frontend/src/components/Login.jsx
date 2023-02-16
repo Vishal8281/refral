@@ -18,12 +18,13 @@ const Login = () => {
 
   const handleChange=(e)=>{
     setData((data)=>({...data,[e.target.name]:e.target.value}))
+    console.log(data)
 
   }
 
   const handlSubmit=()=>{
 
-   axios.post('http//localhost:8000/login',data)
+   axios.post('http://localhost:8000/login',data)
    .then((res)=>{
     console.log(res)
     navigate('/home')
@@ -85,6 +86,7 @@ const Login = () => {
                 onChange={handleChange}
                 value={data.password}
                 name='password'
+                type='password'
                 style={{
                   border:"none",
                   boxShadow:"5px 10px 10px 0px rgba(0,0,0,0.4)",
